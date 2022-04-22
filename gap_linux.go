@@ -272,3 +272,15 @@ func (a *Adapter) Connect(address Addresser, params ConnectionParams) (*Device, 
 func (d *Device) Disconnect() error {
 	return d.device.Disconnect()
 }
+
+func (d *Device) IsConnected() bool {
+    b, e:=d.device.GetConnected()
+    if e==nil {
+        return b
+    }
+    return false
+}
+
+func (d *Device) Show() bool {
+	return false
+}
